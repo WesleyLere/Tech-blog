@@ -34,7 +34,7 @@
                 <a href="/" class="text-2xl block py-2 pl-3 pr-4 text-slate-100 rounded hover:bg-gray-100 hover:drop-shadow-lg md:hover:bg-transparent md:border-0 md:hover:text-blue-700  md:p-0" aria-current="page">Home</a>
               </li>
                <li>
-                <a href="/profile" class="text-2xl block py-2 pl-3 pr-4 text-slate-100 rounded hover:bg-gray-100 hover:drop-shadow-lg md:hover:bg-transparent md:border-0 md:hover:text-blue-700  md:p-0" aria-current="page">Profile</a>
+                <a href="/dashboard" class="text-2xl block py-2 pl-3 pr-4 text-slate-100 rounded hover:bg-gray-100 hover:drop-shadow-lg md:hover:bg-transparent md:border-0 md:hover:text-blue-700  md:p-0" aria-current="page">Profile</a>
               </li>
                {{#unless logged_in}}
               <li>
@@ -57,8 +57,10 @@
   </header>
 
 {{{ body }}}
-   
-<script src="/js/public.js"></script>
+   {{#if logged_in}}
+<script src="/js/logout.js"></script>
+{{/if}}
+
  {{!-- <script src="https://unpkg.com/flowbite@1.5.4/dist/flowbite.js"></script> --}}
 </body>
 
