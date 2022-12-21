@@ -34,10 +34,18 @@ router.get('/login', async (req, res) => {
 
 })
 
+router.get('/dashboard',  (req, res) => {
+    res.render('dashboard')
+
+})
+
 router.get('/addpost',  (req, res) => {
      res.render('addPost')
 
 })
+router.get('/comment',  (req, res) => {
+    res.render('comment')
 
+})
 module.exports = router;
 

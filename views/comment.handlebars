@@ -1,0 +1,26 @@
+<form class="bg-slate-700 shadow-lg w-1/2 rounded-2xl flex-column px-8 pt-6 pb-8 mb-4 mx-auto" id="commentForm">
+    <div class="mb-4">
+        <label class="block text-slate-200 text-sm font-bold mb-2" for="titleOutput">
+            {{posts.title}}
+        </label>
+    </div>
+    <div class="mb-4">
+        <label class="block text-slate-200 text-sm font-bold mb-2 h-1/5" for="bodyOutput">
+            {{posts.body}}
+        </label>
+    </div>
+<label class="block text-slate-200 text-sm font-bold mb-2" for="commentinput">
+       Comment
+      </label>
+      <input
+        class="shadow-lg border-2 rounded-full w-full py-2 px-3 text-gray-700 border-blue-400 focus:outline-none focus:shadow-outline"
+        id="commentInput"  placeholder="type your comment here">
+    <button id="addButton"
+        class=" text-center transform transition duration-200 items-center flex bg-slate-300 m-auto w-auto hover:scale-110 hover:shadow-md hover:bg-blue-700 rounded-full text-white border-2 border-slate-800 "
+        type="submit">
+        +<br>Add Post
+    </button>
+</form>
+
+
+<script src="/js/comment.js"></script>
