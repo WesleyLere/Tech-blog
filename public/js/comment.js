@@ -1,13 +1,14 @@
-const commentFormHandler = async (event) => {
+const post_id = location.pathname.split('/')[2];
+const commentFormHandler = async () => {
     event.preventDefault();
 
 
-    const comment = document.querySelector('#password').value.trim();
+    const comment = document.querySelector('#commentInput').value.trim();
 
-    if (emailUsername && password) {
-        const response = await fetch('/api/users/login', {
+    if (comment) {
+        const response = await fetch('/api/comments/', {
             method: 'POST',
-            body: JSON.stringify({ comment }),
+            body: JSON.stringify({ comment, post_id }),
             headers: { 'Content-Type': 'application/json' },
         });
         console.log
@@ -19,4 +20,4 @@ const commentFormHandler = async (event) => {
     }
 };
 
-document.querySelector('commentForm').addEventListener('submit', commentFormHandler);
+document.querySelector('#commentButton').addEventListener('click', commentFormHandler);

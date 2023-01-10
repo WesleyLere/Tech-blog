@@ -8,53 +8,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="/css/styles.css" />
-  <style>
-    @import url("https://p.typekit.net/p.css?s=1&k=tls2wal&ht=tk&f=25293.25296.25297.25298.25303.25304.25305.25306.25307&a=59059523&app=typekit&e=css");
-  </style>
+  {{!-- <style>
+    @import url("");
+  </style> --}}
   <title>Techblog</title>
 </head>
 
-<body
-  class="min-h-screen bg-gray-400">
+<body class="min-h-screen bg-gray-400">
 
   <header>
 
-    
+
 
     <nav class="sticky top-0 px-2 sm:px-4 py-2.5 rounded bg-blue-800 flex-column items-stretch">
-        <div class="container flex flex-wrap items-center justify-between mx-auto">     
-          <div class="hidden w-full md:block md:w-auto flex align-content: space-between;">
-            <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
-              <li>
-                <a href="/" class="text-2xl block py-2 pl-3 pr-4 text-slate-100 rounded hover:bg-gray-100 hover:drop-shadow-lg md:hover:bg-transparent md:border-0 md:hover:text-blue-700  md:p-0" aria-current="page">Home</a>
-              </li>
-               <li>
-                <a href="/dashboard" class="text-2xl block py-2 pl-3 pr-4 text-slate-100 rounded hover:bg-gray-100 hover:drop-shadow-lg md:hover:bg-transparent md:border-0 md:hover:text-blue-700  md:p-0" aria-current="page">DashBoard</a>
-              </li>
-               {{#unless logged_in}}
-              <li>
-                <a href="/login" class="text-2xl block py-2 pl-3 pr-4 text-slate-100 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Login</a>
-              </li>
-              {{/unless}}
-              {{#if logged_in}}
-              <li>
-                <a href="#" class="text-2xl block py-2 pl-3 pr-4 text-slate-100 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0" id="logout">Logout</a>
-              </li>
-              {{/if}}
-            </ul>
-          </div>
+      <div class="container flex flex-wrap items-center justify-between mx-auto">
+        <div class="hidden w-full md:block md:w-auto flex align-content: space-between;">
+          <ul
+            class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
+            <li>
+              <a href="/"
+                class="text-2xl block py-2 pl-3 pr-4 text-slate-100 rounded hover:bg-gray-100 hover:drop-shadow-lg md:hover:bg-transparent md:border-0 md:hover:text-blue-700  md:p-0"
+                aria-current="page">Home</a>
+            </li>
+            <li>
+              <a href="/dashboard"
+                class="text-2xl block py-2 pl-3 pr-4 text-slate-100 rounded hover:bg-gray-100 hover:drop-shadow-lg md:hover:bg-transparent md:border-0 md:hover:text-blue-700  md:p-0"
+                aria-current="page">DashBoard</a>
+            </li>
+            {{#unless logged_in}}
+            <li>
+              <a href="/login"
+                class="text-2xl block py-2 pl-3 pr-4 text-slate-100 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Login</a>
+            </li>
+            {{/unless}}
+            {{#if logged_in}}
+            <li>
+              <a href="#"
+                class="text-2xl block py-2 pl-3 pr-4 text-slate-100 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
+                id="logout">Logout</a>
+            </li>
+            {{/if}}
+          </ul>
         </div>
       </div>
-     <div class="container flex flex-wrap items-center justify-left  ">
-      <h1 class="text-7xl p-5 m-5 text-slate-100" id="heading">Techblog</h1>
-    </div>
-    </nav> 
+      </div>
+      <div class="container flex-column flex-wrap items-center justify-left  ">
+        <h1 class="text-7xl p-5 text-slate-100" id="heading">Techblog</h1>
+        {{#if logged_in}}
+        <h2 class="text-3xl p-5 mb-5 text-slate-100">
+          Signed in as :{{user.username}}
+        </h2>
+        {{/if}}
+      </div>
+    </nav>
   </header>
 
-{{{ body }}}
-   {{#if logged_in}}
-<script src="/js/logout.js"> console.log(logged_in)</script>
-{{/if}}
+  {{{ body }}}
+  {{#if logged_in}}
+  <script src="/js/logout.js"> console.log(logged_in)</script>
+  {{/if}}
 
 </body>
 

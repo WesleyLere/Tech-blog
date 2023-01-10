@@ -1,6 +1,25 @@
+<h1>
+    {{user.username}}
+</h1>
 
+{{#each posts as |post|}}
+<a href="/post/{{id}}"></a>
+<div class="bg-slate-700 shadow-lg w-1/2 rounded-2xl flex-column px-8 pt-6 pb-8 mb-4 mx-auto signUp-form">
+    <div class="mb-4">
+        <h2 class="block text-slate-200 text-sm font-bold mb-2" for="titleOutput">
+            {{title}}
+        </h2>
+    </div>
+    <div class="mb-4">
+        <h4 class="block text-slate-200 text-sm font-bold mb-2 h-1/5" for="bodyOutput">
+            {{body}}
+        </h4>
+    </div>
+</div>
+</a>
+{{/each}}
 
-
-<a id="addButton" href="/addpost" class=" text-dark transform transition duration-200 items-center flex bg-slate-300 m-auto w-auto hover:scale-110 hover:shadow-md hover:bg-blue-700 rounded-full text-white border-2 border-slate-800 ">
+<a id="addButton" href="/addpost"
+    class=" text-dark transform transition duration-200 items-center flex bg-slate-300 m-auto w-auto hover:scale-110 hover:shadow-md hover:bg-blue-700 rounded-full text-white border-2 border-slate-800 ">
     +<br>Add Post
 </a>

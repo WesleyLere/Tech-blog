@@ -1,0 +1,26 @@
+// async function postButton(event) {
+//     event.preventDefault()
+//     const title = document.querySelector('#titleInput').value.trim();
+//     const body = document.querySelector('#bodyInput').value.trim();
+//  console.log(title, body)
+//     if (title && body) {
+//         const response = await fetch('/api/posts/new', {
+//             method: 'POST',
+//             body: JSON.stringify({
+//                 title,
+//                 body
+//             }),
+//             headers: { 'Content-Type': 'application/json' }
+//         });
+//         console.log(response)
+//         if (response.ok) {
+//             document.location.replace('/');
+//         } else {
+//             console.log(response);
+//         }
+//     }
+// }
+
+
+
+// document.querySelector('#postButton').addEventListener('submit', postButton);
